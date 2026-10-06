@@ -9,7 +9,7 @@
     {
       "binding": "DB",
       "database_name": "memomap-db",
-      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "database_id": "bc973c55-24f5-4ba3-bcab-1458ef3a7700",
       "migrations_dir": "migrations"
     }
   ],
