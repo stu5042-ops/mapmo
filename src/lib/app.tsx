@@ -295,7 +295,7 @@ export async function uploadMedia(userId: string, file: File) {
 export type Track = { id: number; title: string; artist: string; cover: string; link: string };
 
 export const searchDeezer = createServerFn({ method: "GET" })
-  .inputValidator((value) => {
+  .validator((value) => {
     const q = typeof (value as { q?: unknown })?.q === "string" ? (value as { q: string }).q.trim() : "";
     if (!q || q.length > 100) throw new Error("검색어가 올바르지 않아요");
     return { q };
@@ -313,7 +313,7 @@ export const searchDeezer = createServerFn({ method: "GET" })
   });
 
 export const getTrackPreview = createServerFn({ method: "GET" })
-  .inputValidator((value) => {
+  .validator((value) => {
     const id = (value as { id?: unknown })?.id;
     if (typeof id !== "number" || !Number.isInteger(id)) throw new Error("곡 ID가 올바르지 않아요");
     return { id };
